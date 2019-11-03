@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import styledNormalize from "styled-normalize";
 
+import img from "./full-bloom.png"
+
 const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
   
@@ -21,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: #f9fafc;
+    background-image: url(${img});
     font-family: 'Open Sans', sans-serif; 
     line-height: 1.5;
     padding: 50px 0;
