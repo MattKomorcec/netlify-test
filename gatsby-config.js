@@ -1,11 +1,11 @@
-const userConfig = require('./config');
+const userConfig = require("./config");
 
 module.exports = {
   siteMetadata: {
     title: userConfig.title,
     author: userConfig.author,
     description: userConfig.description,
-    siteUrl: userConfig.siteUrl,
+    siteUrl: userConfig.siteUrl
   },
   pathPrefix: userConfig.pathPrefix,
   plugins: [
@@ -13,8 +13,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
+        name: "pages"
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -26,28 +26,28 @@ module.exports = {
             options: {
               maxWidth: 700,
               linkImagesToOriginal: false,
-              wrapperStyle: 'margin: 15px -30px !important',
-            },
+              wrapperStyle: "margin: 15px -30px !important"
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-        ],
-      },
+          "gatsby-remark-prismjs",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants"
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
+        trackingId: `UA-155362791-1`
+      }
     },
     `gatsby-plugin-feed`,
     {
@@ -56,13 +56,13 @@ module.exports = {
         name: userConfig.title,
         short_name: userConfig.title,
         start_url: userConfig.siteUrl,
-        background_color: '#fff',
+        background_color: "#fff",
         theme_color: userConfig.primaryColor,
-        display: 'minimal-ui',
-        icon: 'src/main.jpg',
-      },
+        display: "minimal-ui",
+        icon: "src/main.jpg"
+      }
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-  ],
+    `gatsby-plugin-react-helmet`
+  ]
 };

@@ -1,28 +1,25 @@
-import {graphql} from 'gatsby';
-import Helmet from 'react-helmet';
-import get from 'lodash/get';
-import React from 'react';
-
-import userConfig from '../../config';
-
-import Layout from './layout';
-
-import Article from '../components/Article';
-import ArticleHeader from '../components/ArticleHeader';
-import Button from '../components/Button';
-import Card from '../components/Card';
-import Container from '../components/Container';
-import FeaturedImage from '../components/FeaturedImage';
-import PageNav from '../components/PageNav';
-import Share from '../components/Share';
+import { graphql } from "gatsby";
+import Helmet from "react-helmet";
+import get from "lodash/get";
+import React from "react";
+import userConfig from "../../config";
+import Layout from "./layout";
+import Article from "../components/Article";
+import ArticleHeader from "../components/ArticleHeader";
+import Button from "../components/Button";
+import Card from "../components/Card";
+import Container from "../components/Container";
+import FeaturedImage from "../components/FeaturedImage";
+import PageNav from "../components/PageNav";
+import Share from "../components/Share";
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
-    const author = get(this.props, 'data.site.siteMetadata.author');
+    const author = get(this.props, "data.site.siteMetadata.author");
     const { previous, next } = this.props.pageContext;
 
-    let url = '';
+    let url = "";
     if (typeof window !== `undefined`) {
       url = window.location.href;
     }
@@ -32,7 +29,7 @@ class BlogPostTemplate extends React.Component {
         <Container>
           <Helmet
             title={`${post.frontmatter.title} | ${author}`}
-            htmlAttributes={{ lang: 'en' }}
+            htmlAttributes={{ lang: "en" }}
           >
             <meta
               name="description"
@@ -41,11 +38,6 @@ class BlogPostTemplate extends React.Component {
           </Helmet>
           <Card>
             <ArticleHeader>
-              {post.frontmatter.featuredImage && (
-                <FeaturedImage
-                  sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
-                />
-              )}
               <h1>{post.frontmatter.title}</h1>
               <p>{post.frontmatter.date}</p>
               <span />
@@ -93,13 +85,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        featuredImage {
-          childImageSharp {
-            sizes(maxWidth: 850) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
       }
     }
   }
