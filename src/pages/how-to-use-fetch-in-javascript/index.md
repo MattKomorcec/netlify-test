@@ -13,7 +13,7 @@ Since I'm a World of Tanks player, I'll show you how to fetch(see what I did her
 
 Many public API's(Application Programming Interface) require a key in order to use them, you'll often have to register and get your application key. That is the case with World of Tanks API as well.
 
-I already registered my application key, so I'm ready to start. If you want to register your own, click on the link and follow the instructions. https://developers.wargaming.net/reference/
+I already registered my application key, so I'm ready to start. If you want to register your own, click on the link and follow the instructions. <https://developers.wargaming.net/reference/>
 
 Since this tutorial is mostly aimed at beginners, I won't go into too much detail, but there are a few types of requests you can make, so you'll often hear about GET, POST, PUT, DELETE requests. In this post we'll only do GET requests, since they are the simplest, but if you want to learn more, I'll leave some links at the bottom of the article.
 
@@ -21,7 +21,7 @@ First of all, you can use `fetch()` in many ways, the most straightforward way i
 
 In the spirit of good programming practices, we will split all the parts of the `url` we'll be requesting, to make it easy to follow. Our goal here is to get player stats, and to do that, we first have to search for a player by name to get player's `account_id`, and then we fetch the stats with that `account_id`. So we'll have to make 2 requests.
 
-```js
+```csharp
 const APPLICATION_ID = "XXXXXXXXXXXXXXXXXXXXX"; // Your secret application key
 let accountId = "";
 let playerStats = null;
@@ -33,7 +33,7 @@ So, because we are good programmers, we named our application key with all upper
 
 Now, let's make our first request.
 
-```js
+```csharp
 const playerName = "Komah_1"; // This is my username, use whatever you want here
 searchByNameUrl = searchByNameUrl + playerName;
 
@@ -55,7 +55,7 @@ fetch(searchByAccountIdUrl)
 
 And this is the whole code so far:
 
-```js
+```csharp
 const APPLICATION_ID = "XXXXXXXXXXXXXXXXXXXXX";
 let accountId = "";
 let playerStats = null;
@@ -79,11 +79,11 @@ And now if you run this, you can see that it actually didn't work, and there is 
 
 The problem is the `accountId` variable, which is just an empty string in the second `fetch` call. Why? Because when we call the second `fetch`, the result of the first one is still not resolved.
 
-<b><ins>Solution:</ins></b> Place second `fetch` inside of `.then` of the first one. Why? Because we are sure that `accountId` is not an empty string in there, as the result is back from the server.
+_Solution:_ Place second `fetch` inside of `.then` of the first one. Why? Because we are sure that `accountId` is not an empty string in there, as the result is back from the server.
 
 Full working code:
 
-```js
+```csharp
 const APPLICATION_ID = "XXXXXXXXXXXXXXXXXXXXX";
 let accountId = "";
 let playerStats = null;
@@ -109,11 +109,11 @@ fetch(searchByNameUrl)
 
 And now you can inspect `playerStats` variable in the console, and see what it contains. In case of my username, you can see below on the picture.
 
-<img src="./api_result.png" alt="Result of calling the Wargaming API" style="width:100%;" />
+![Result of calling the Wargaming API](./api_result.png)
 
 If you have any questions about this, feel free to send me an email.
 
-##<ins>Additional links:</ins>
+## Additional links
 
-- Fetch documentation - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-- Template literals - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+- _Fetch documentation_ - <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch>
+- _Template literals_ - <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals>
