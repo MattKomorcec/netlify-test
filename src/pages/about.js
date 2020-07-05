@@ -12,7 +12,7 @@ const AboutPage = () => {
       <Container>
         <Card>
           <Article>
-            <Social github={social.github} linkedin={social.linkedin} />
+            <Social github={social.github} />
             <hr />
             <div>
               <p>
@@ -40,7 +40,7 @@ const AboutPage = () => {
               </p>
               <p>
                 So with all being said, please join me here, and if you have any
-                suggestions , wishes or critiques, please contact me.
+                suggestions, wishes or critiques, please contact me.
               </p>
               <p>Hope you have a great time!</p>
             </div>
