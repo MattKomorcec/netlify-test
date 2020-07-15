@@ -1,6 +1,6 @@
 ---
-title: "How to use fetch() in JavaScript"
-date: "2019-11-03"
+title: "How to call an API in JavaScript"
+date: "2019-11-04"
 ---
 
 Every good application has to talk to the outside world and not just with itself, right?
@@ -15,7 +15,7 @@ Many public API's(Application Programming Interface) require a key in order to u
 
 I already registered my application key, so I'm ready to start. If you want to register your own, click on the link and follow the instructions. <https://developers.wargaming.net/reference/>
 
-Since this tutorial is mostly aimed at beginners, I won't go into too much detail, but there are a few types of requests you can make, so you'll often hear about GET, POST, PUT, DELETE requests. In this post we'll only do GET requests, since they are the simplest, but if you want to learn more, I'll leave some links at the bottom of the article.
+Since this tutorial is mostly aimed at beginners, I won't go into too much detail, but there are a few types of requests you can make, so you'll often hear about `GET`, `POST`, `PUT`, `DELETE` requests. In this post we'll only do `GET` requests, since they are the simplest, but if you want to learn more, I'll leave some links at the bottom of the article.
 
 First of all, you can use `fetch()` in many ways, the most straightforward way is to just provide it with an `url`, but if you want additional configuration, you can provide it with an additional object, in which you can set headers, method of the request, and so on.
 

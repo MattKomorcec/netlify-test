@@ -17,8 +17,8 @@ const AboutPage = () => {
             <div>
               <p>
                 When I started my programming journey, I didn't have a mentor or
-                basically anyone that could have helped me during my struggles
-                of learning how to program.
+                someone that could have helped me during my struggles of
+                learning how to program.
               </p>
               <p>
                 Now, after almost 5 years of someone paying me to write code, I
@@ -27,9 +27,9 @@ const AboutPage = () => {
                 start yet another programming blog?!
               </p>
               <p>
-                So I hope this blog will serve you reader as a mentor I didn't
+                So I hope this blog will serve you, reader, as a mentor I didn't
                 have, and help you clarify things while learning, or just give
-                you motivation to persist in your journey. Because it's worth
+                you motivation to persist on your journey. Because it's worth
                 it, trust me!
               </p>
               <p>
